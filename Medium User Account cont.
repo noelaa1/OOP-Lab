@@ -1,1 +1,25 @@
+class UserAccount:
+    def __init__(self, password):
+        self.__password = password   
+
+    def login(self, password):
+        if password == self.__password:
+            return True
+        else:
+            return False
+
+    def change_password(self, old_password, new_password):
+        if old_password == self.__password:
+            self.__password = new_password
+            return True
+        else:
+            return False
+
+user = UserAccount("abc123")
+
+print(user.login("abc123"))        
+print(user.login("wrongpass"))     
+
+print(user.change_password("abc123", "newpass"))  
+print(user.login("newpass"))       
 
