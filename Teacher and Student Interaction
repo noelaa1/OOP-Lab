@@ -1,0 +1,18 @@
+class Student:
+    def __init__(self):
+        self.grade = None   # student attribute
+
+    def view_grade(self):
+        return self.grade
+
+
+class Teacher:
+    def assign_grade(self, student, grade):
+        student.grade = grade   # modifies the Student object
+
+student1 = Student()
+teacher1 = Teacher()
+
+teacher1.assign_grade(student1, 85)
+
+print(student1.view_grade())
