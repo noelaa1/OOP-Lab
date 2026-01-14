@@ -1,1 +1,15 @@
+school = School()
+
+s1 = Student("Alex", 101)
+s2 = Student("Jordan", 102)
+s3 = Student("Alexis", 101)  # duplicate ID
+
+school.add_student(s1)
+school.add_student(s2)
+school.add_student(s3)  # will not be added
+
+school.list_students()
+
+school.remove_student("Alex")
+school.list_students()
 
