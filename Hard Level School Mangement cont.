@@ -1,15 +1,42 @@
+class Student:
+    def __init__(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+
+
+class School:
+    def __init__(self):
+        self.students = []   # list of Student objects
+
+    def add_student(self, student):
+        for s in self.students:
+            if s.student_id == student.student_id:
+                print("Student ID already exists.")
+                return
+        self.students.append(student)
+
+    def remove_student(self, name):
+        for s in self.students:
+            if s.name == name:
+                self.students.remove(s)
+                return
+        print("Student not found.")
+
+    def list_students(self):
+        for s in self.students:
+            print(s.name, "-", s.student_id)
+
 school = School()
 
 s1 = Student("Alex", 101)
 s2 = Student("Jordan", 102)
-s3 = Student("Alexis", 101)  # duplicate ID
+s3 = Student("Alexis", 101) 
 
 school.add_student(s1)
 school.add_student(s2)
-school.add_student(s3)  # will not be added
+school.add_student(s3)  
 
 school.list_students()
 
 school.remove_student("Alex")
 school.list_students()
-
